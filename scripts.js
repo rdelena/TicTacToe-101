@@ -82,14 +82,6 @@ const resetBoard = () => {
     squares[i].innerHTML = null;
   }
 };
-const checkForWin = () => {
-  if (horizontalWin() || verticalWin() || diagonalWin()) {
-    window.alert(`Player ${currentMarker} won!`);
-  } else {
-    changeMarker();
-  }
-};
-
 const horizontalWin = () => {
   // Your code here to check for horizontal wins
   if (
@@ -128,7 +120,6 @@ const verticalWin = () => {
     return true;
   }
 };
-
 const diagonalWin = () => {
   // Your code here to check for diagonal wins
   if (
@@ -141,5 +132,12 @@ const diagonalWin = () => {
     (board[2][0] == "O" && board[1][1] == "O" && board[0][2] == "O")
   ) {
     return true;
+  }
+};
+const checkForWin = () => {
+  if (horizontalWin() || verticalWin() || diagonalWin()) {
+    window.alert(`Player ${currentMarker} won!`);
+  } else {
+    changeMarker();
   }
 };
